@@ -12,12 +12,12 @@ class myTableViewController: UITableViewController {
     
     struct stateReport: Codable {
         let state:String?
+        let positive:Int?
         let recovered:Int?
         let hospitalizedCurrently:Int?
         let lastUpdateEt:String?
         let death:Int?
         let positiveIncrease:Int?
-        let total:Int?
     }
     
     var countryReport:[stateReport] = []
@@ -196,7 +196,7 @@ class myTableViewController: UITableViewController {
         cell.state = state.state!
         cell.stateLabel.text = stateDictionary[state.state!]
         cell.stateFlag.image = UIImage(named: state.state!.lowercased())
-        cell.stateCases.text = parseNumber(num: state.total!)
+        cell.stateCases.text = parseNumber(num: state.positive!)
 
         return cell
     }
@@ -209,7 +209,7 @@ class myTableViewController: UITableViewController {
         
         destVC.propStateInitials = countryReport[currIndex!].state!
         destVC.propStateName = stateDictionary[countryReport[currIndex!].state!]!
-        destVC.propTotalCases = parseNumber(num: countryReport[currIndex!].total!)
+        destVC.propTotalCases = parseNumber(num: countryReport[currIndex!].positive!)
         destVC.propDeaths = countryReport[currIndex!].death != nil ? parseNumber(num: countryReport[currIndex!].death!) : "No info"
         destVC.propDailyIncrease = countryReport[currIndex!].positiveIncrease != nil ? parseNumber(num: countryReport[currIndex!].positiveIncrease!) : "No info"
         destVC.propRecovered = countryReport[currIndex!].recovered != nil ? parseNumber(num: countryReport[currIndex!].recovered!) : "No info"
