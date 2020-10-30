@@ -3,7 +3,6 @@
 //  Homework3
 //
 //  Created by Carrie Hunner on 9/17/20.
-//  Copyright © 2020 Carrie Hunner. All rights reserved.
 //
 
 import UIKit

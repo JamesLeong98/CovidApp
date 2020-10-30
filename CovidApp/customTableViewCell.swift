@@ -3,7 +3,6 @@
 //  Homework3
 //
 //  Created by James Leong on 9/18/20.
-//  Copyright © 2020 Carrie Hunner. All rights reserved.
 //
 
 import UIKit
